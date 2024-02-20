@@ -46,19 +46,22 @@ class Solution:
         s_tot = (n * (n + 1)) // 2
         return s_tot - s
 
+
 """
 Runtime 101ms Beats95.70% of users with Python3
 Memory 17.83MB Beats64.04% of users with Python3
 """
 
+tests = []
+tests.append({"input": {"nums": [3, 0, 1]},
+              "output": 2}
+             )
+tests.append({"input": {"nums": [0, 1]},
+              "output": 2}
+             )
+tests.append({"input": {"nums": [9, 6, 4, 2, 3, 5, 7, 0, 1]},
+              "output": 8}
+             )
+for test in tests:
+    print(Solution().missingNumber(**test["input"]) == test["output"])
 
-# case 1 nums = [3, 0, 1] ans = 2
-ans = Solution().missingNumber([3, 0, 1])
-print(ans)
-# case 2 nums = [0, 1] ans = 2
-ans = Solution().missingNumber([0, 1])
-print(ans)
-
-# case 2 nums = [9, 6, 4, 2, 3, 5, 7, 0, 1] ans = 8
-ans = Solution().missingNumber([9, 6, 4, 2, 3, 5, 7, 0, 1])
-print(ans)
