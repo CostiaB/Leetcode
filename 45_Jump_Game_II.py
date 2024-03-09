@@ -40,4 +40,47 @@ Constraints:
 
 
 """
+class Solution:
+    def jump(self, nums: list[int]) -> int:
+        # pointers to show current range of indices
+        l, r = 0, 0
+        ans = 0
+        # while r les than last index
+        while r < (len(nums) - 1):
+            maxJump = 0
+            # iteration between l and r
+            for i in range(l, r + 1):
+                # searching the max jumping distance in current range
+                maxJump = max(maxJump, i + nums[i])
+            # moving the left pointer to the end of current range
+            l = r + 1
+            # update the left pointer to maximum jump distance
+            r = maxJump
+            ans += 1
+        return ans
 
+test0 = {
+    'input': {
+        'nums': [2, 3, 1, 1, 4]
+            },
+    'output': 2
+}
+
+test1 = {
+    'input': {
+        'nums': [2, 3, 0, 1, 4]
+            },
+    'output': 2
+}
+
+tests = [test0, test1]
+
+for test in tests:
+    print( Solution().jump( **test['input'] ) == test['output'])
+
+
+
+"""
+Runtime 95ms Beats96.26% of users with Python3
+Memory 17.58MB Beats79.25% of users with Python3
+"""
