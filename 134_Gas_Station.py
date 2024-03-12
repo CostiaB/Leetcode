@@ -47,7 +47,7 @@ Constraints:
 
 class Solution:
     def canCompleteCircuit(self, gas: list[int], cost: list[int]) -> int:
-        if sum(gas) < sum (cost):
+        if sum(gas) < sum(cost):
             return -1
 
         total = 0
@@ -58,6 +58,7 @@ class Solution:
                 total = 0
                 res = i + 1
         return res
+
 
 '''
 Runtime 930ms Beats74.43% of users with Python3
