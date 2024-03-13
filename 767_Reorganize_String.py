@@ -15,6 +15,9 @@ Constraints:
     1 <= s.length <= 500
     s consists of lowercase English letters.
 """
+import heapq
+from collections import Counter
+
 
 class Solution:
     def reorganizeString(self, s: str) -> str:
@@ -37,3 +40,28 @@ class Solution:
             if cnt !=0:
                 prev = [cnt, char]
         return res
+
+
+test0 = {
+    'input': {'s': "aab",
+
+    },
+    'output': "aba"
+}
+test1 = {
+    'input': {'s': "aaab",
+
+    },
+    'output': ""
+}
+
+tests = [test0, test1]
+
+for test in tests:
+    print(Solution().reorganizeString(**test['input']) == test['output'])
+
+
+"""
+Runtime 23ms Beats99.61% of users with Python3
+Memory 16.59MB Beats 81.06% of users with Python3
+"""
