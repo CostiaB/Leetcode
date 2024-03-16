@@ -65,6 +65,7 @@ tests = [test0, test1]
 for test in tests:
     print(Solution().findMaxLength(**test['input']) == test['output'])
 
+
 """
 Runtime 628ms Beats 37.99% of users with Python3
 Memory 22.05MB Beats 91.38% of users with Python3
