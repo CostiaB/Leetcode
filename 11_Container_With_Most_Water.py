@@ -24,7 +24,8 @@ Constraints:
 
 class Solution:
 
-    def maxArea(self, height: list[int]) -> int:
+    @staticmethod
+    def maxArea(height: list[int]) -> int:
         l = 0
         r = len(height) - 1
         amt = 0
@@ -36,6 +37,7 @@ class Solution:
                 r -= 1
 
         return amt
+
 
 test0 = {
     'input': {'height': [1, 8, 6, 2, 5, 4, 8, 3, 7]
@@ -54,7 +56,7 @@ test1 = {
 tests = [test0, test1]
 
 for test in tests:
-    print(Solution().maxArea(**test['input']) == test['output'])
+    print(Solution.maxArea(**test['input']) == test['output'])
 
 """
 Runtime 524ms Beats 59.65% of users with Python3
