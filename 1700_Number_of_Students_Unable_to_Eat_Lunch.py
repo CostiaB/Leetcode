@@ -90,3 +90,9 @@ tests = [test0, test1]
 
 for test in tests:
     print(Solution.countStudents(**test['input']) == test['output'])
+
+
+"""
+Runtime 39ms Beats 63.55% of users with Python3
+Memory 16.46MB Beats 95.17% of users with Python3
+"""
