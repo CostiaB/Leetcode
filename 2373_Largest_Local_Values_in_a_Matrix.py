@@ -31,19 +31,15 @@ class Solution:
     def largestLocal(self, grid: list[list[int]]) -> list[list[int]]:
         n = len(grid) - 2
 
-        maxLocal = []
-
+        maxLocal = [[0] * n for _ in range(n)]
         for i in range(n):
-
-            tmp = []
             for j in range(n):
-
-                t_max = 0
-                for k in range(i, i + 3):
-                    for l in range(j, j + 3):
-                        t_max = max(t_max, grid[k][l])
-                tmp.append(t_max)
-            maxLocal.append(tmp)
+                for r in range(i, i + 3):
+                    for c in range(j, j + 3):
+                        maxLocal[i][j] = max(
+                            maxLocal[i][j],
+                            grid[r][c]
+                        )
 
         return maxLocal
 
@@ -69,6 +65,6 @@ for test in tests:
 
 
 """
-Runtime 140ms Beats 32.71% of users with Python3
-Memory 17.11MB Beats 28.98% of users with Python3
+Runtime 155ms Beats 12.77% of users with Python3
+Memory 17.08MB Beats 70.30% of users with Python3
 """
